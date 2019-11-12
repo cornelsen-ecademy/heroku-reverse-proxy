@@ -5,6 +5,16 @@
 # Step 3: set custom domain in Intercom Help Center settings
 # Step 4: make sure your DNS record is configured to IP of your Nginx server
 
+worker_processes <%= ENV['NGINX_WORKERS'] || 2 %>;
+error_log /dev/stdout info;
+daemon off;
+
+events {
+	use epoll;
+	accept_mutex on;
+	worker_connections 256;
+}
+
 http {
   server {
     server_name support.ecademy-learning.com; # replace this with your domain
