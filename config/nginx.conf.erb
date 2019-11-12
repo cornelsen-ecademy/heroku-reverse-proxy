@@ -1,10 +1,3 @@
-# Prerequisites: ngx_http_ssl_module and ngx_http_proxy_module should be enabled
-
-# Step 1: set up normal server with HTTPS https://letsencrypt.org/
-# Step 2: set up proxy settings as shown below 
-# Step 3: set custom domain in Intercom Help Center settings
-# Step 4: make sure your DNS record is configured to IP of your Nginx server
-
 worker_processes <%= ENV['NGINX_WORKERS'] || 2 %>;
 error_log /dev/stdout info;
 daemon off;
@@ -19,7 +12,7 @@ http {
   resolver 8.8.8.8;
   server {
     listen <%= ENV["PORT"] %>;
-    server_name support.ecademy-learning.com; # replace this with your domain
+    server_name support.ecademy-learning.com;
 
     location / {
       # using "set" is important as IP addresses of Intercom servers 
