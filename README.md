@@ -1,17 +1,10 @@
-# Reverse Proxy on Heroku
+# Reverse Proxy for Intercom support pages
 
-Run a reverse proxy using nginx on Heroku.
+Intercom requires an SSL reverse proxy for custom domains. See [their docs](https://developers.intercom.com/installing-intercom/docs/set-up-your-custom-domain).
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Installation
-
-Use the [Deploy to Heroku](https://heroku.com/deploy) button above to create a
-copy of the app, then configure the UPSTREAM_SERVER config variable.
+This project uses Nginx to implement sucha a reverse proxy on Heroku.
 
 ## Credits
 
-Updated to heroku-16 stack and recent community build pack for nginx.
-
-Based on [octoberswimmer/heroku-reverse-proxy](https://github.com/octoberswimmer/heroku-reverse-proxy),
+Based on [funwhilelost/heroku-reverse-proxy](https://github.com/funwhilelost/heroku-reverse-proxy),
 originally forked from [api-proxy-3scale-heroku](https://github.com/Taytay/api-proxy-3scale-heroku).
