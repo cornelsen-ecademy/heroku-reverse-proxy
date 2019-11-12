@@ -5,15 +5,17 @@
 # Step 3: set custom domain in Intercom Help Center settings
 # Step 4: make sure your DNS record is configured to IP of your Nginx server
 
-server {
-  listen 443 ssl;
-  server_name support.ecademy-learning.com; # replace this with your domain
+http {
+  server {
+    listen 443 ssl;
+    server_name support.ecademy-learning.com; # replace this with your domain
 
-  location / {
-    # using "set" is important as IP addresses of Intercom servers 
-    # changes dynamically. "set" enables nginx to follow dynamic IPs
-    set $intercom "https://custom.intercom.help:443"; 
-    proxy_set_header Host $host;
-    proxy_pass $intercom;
+    location / {
+      # using "set" is important as IP addresses of Intercom servers 
+      # changes dynamically. "set" enables nginx to follow dynamic IPs
+      set $intercom "https://custom.intercom.help:443"; 
+      proxy_set_header Host $host;
+      proxy_pass $intercom;
+    }
   }
 }
