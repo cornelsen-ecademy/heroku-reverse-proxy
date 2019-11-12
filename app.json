@@ -1,20 +1,15 @@
 {
-	"name": "Reverse Proxy",
-	"description": "Simple reverse proxy for Heroku",
+	"name": "Intercom support proxy",
+	"description": "Reverse proxy for Intercom",
 	"keywords": [
 		"reverse proxy",
 		"nginx"
 	],
-	"repository": "https://github.com/funwhilelost/heroku-reverse-proxy",
+	"repository": "https://github.com/cornelsen-ecademy/intercom-support-proxy",
 	"buildpacks": [
 		{
 			"url": "https://github.com/heroku/heroku-buildpack-nginx"
 		}
 	],
-	"env": {
-		"UPSTREAM_SERVER": {
-			"description": "URL of upstream server to which all requests should be proxied"
-		}
-	},
 	"stack": "heroku-18"
 }
