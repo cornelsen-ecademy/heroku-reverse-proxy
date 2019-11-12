@@ -17,6 +17,7 @@ events {
 
 http {
   server {
+    listen <%= ENV["PORT"] %>;
     server_name support.ecademy-learning.com; # replace this with your domain
 
     location / {
