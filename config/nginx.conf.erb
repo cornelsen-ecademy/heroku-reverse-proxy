@@ -16,6 +16,7 @@ events {
 }
 
 http {
+  resolver 8.8.8.8;
   server {
     listen <%= ENV["PORT"] %>;
     server_name support.ecademy-learning.com; # replace this with your domain
